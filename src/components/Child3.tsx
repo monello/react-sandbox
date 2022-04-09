@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 
 let renderCount = 0;
 
-const Child = () => {
+const Child3 = () => {
     useEffect(() => {
         renderCount++;
     });
-    return <div>Child 1 Component called {renderCount} times.</div>;
+    return <div>Child 3 Component called {renderCount} times.</div>;
 };
 
-export default Child;
+export default Child3;
