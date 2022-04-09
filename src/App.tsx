@@ -19,7 +19,7 @@ function App() {
     };
 
     const MemoizedChild = useMemo(() => <Child2 />, []);
-    const MemoizedChild2 = useMemo(() => <Child3 />, [bar]);
+    const MemoizedChild2 = useMemo(() => <Child3 bar={bar} />, [bar]);
 
     return (
         <div className="App">
