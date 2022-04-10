@@ -1,7 +1,31 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
+interface Todo {
+    userId: number;
+    id: number;
+    title: string;
+    completed: boolean;
+}
+
 function App() {
+    const [todos, setTodos] = useState<Todo[]>([]);
+
+    useEffect(() => {
+        // fetch("https://jsonplaceholder.typicode.com/todos")
+        //     .then((response) => response.json())
+        //     .then((res) => setTodos(res));
+
+        (async () => {
+            const response = await fetch(
+                "https://jsonplaceholder.typicode.com/todos"
+            );
+            const data = await response.json();
+            console.log("TODO: ", data[0].userId);
+            setTodos(data);
+        })();
+    }, []);
+
     const [isAlive, setIsAlive] = useState(false);
     const [age, setAge] = useState(0);
     const [lifeStage, setLifeState] = useState("Newborn");
@@ -70,6 +94,12 @@ function App() {
         setAge((prevAge) => prevAge + 1);
     };
 
+    let apiData = todos.length ? (
+        <div>User ID: {todos[0].userId}</div>
+    ) : (
+        <>Loading...</>
+    );
+
     return (
         <div className="App">
             <header className="App-header">
@@ -77,6 +107,8 @@ function App() {
                 <h2>Current Age: {age}</h2>
                 <h2>Life Stage: {lifeStage}</h2>
                 <button onClick={handleIncreaseAge}>Increase Age</button>
+                <h2>API Data</h2>
+                {apiData}
             </header>
         </div>
     );
