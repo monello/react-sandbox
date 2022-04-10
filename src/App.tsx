@@ -61,7 +61,13 @@ function App() {
     }, [lifeStage]);
 
     const handleIncreaseAge = () => {
-        setAge(age + 1);
+        // The correct way to update state based on the exising/current/previous state is to use the callback function method
+        // If you just want to override the ste regardless of the previous (most current) value then you can just set it directly like it's done
+        //  for setIsAlive() and setLifeState() - we don't care what the previous state is, because our new state is not dependent on that value
+        // For age however, we WANT the latest value so we can add 1 to it, so we need to be 100% sure we use the lastest (most updated) value
+        // Using the callback method as below, is a way that React promises that we will get access to that value, though an argument that React
+        //  will pass to that function for us. you can just accept it in the function and name it whatever works for you. Here I named it 'prevAge'
+        setAge((prevAge) => prevAge + 1);
     };
 
     return (
