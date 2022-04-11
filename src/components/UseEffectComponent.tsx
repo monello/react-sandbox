@@ -10,7 +10,7 @@ const UseEffectComponent = () => {
             console.log(
                 "[UseEffectComponent]: useEffect > setInterval is executed"
             );
-            setVal(() => val + 1);
+            setVal((currentVal) => currentVal + 1);
         }, 1000);
     }, []);
 
