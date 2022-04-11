@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function UseStateComponent() {
     const [arr, setArr] = useState<number[]>([]);
-    const [name, setName] = useState(null);
+    const [name, setName] = useState<string | null>(null);
 
     return (
         <div>
