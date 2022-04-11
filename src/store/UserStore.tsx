@@ -7,6 +7,6 @@ const initialState = {
 
 export type UserState = typeof initialState;
 
-const context = createContext<typeof initialState>(initialState);
+const context = createContext<UserState>(initialState);
 
 export default context;
