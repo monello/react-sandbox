@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function UseStateComponent() {
-    const [arr, setArr] = useState([]);
+    const [arr, setArr] = useState<number[]>([]);
     return (
         <div>
             <div>
