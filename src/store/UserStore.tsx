@@ -1,8 +1,12 @@
-import { createContext, useContext } from "react";
+import { createContext } from "react";
 
 const initialState = {
     first: "Jack",
     last: "Herrington",
 };
 
-const context = createContext(initialState);
+export type UserState = typeof initialState;
+
+const context = createContext<typeof initialState>(initialState);
+
+export default context;
