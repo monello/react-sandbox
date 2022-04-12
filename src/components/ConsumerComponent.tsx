@@ -1,18 +1,23 @@
 import React, { useContext } from "react";
 
-import UserStore, { UserState } from "../store/UserStore";
+import { UserContext, UserContextObject } from "../store/UserStore";
 
-const ConsumerComponent = () => {
-    // ## Typing thr context can be inferred
-    // const user = useContext(UserStore);
+const ConsumerComponent: React.FC = () => {
+    // ## Typing the context can be inferred
+    // const user = useContext(UserContext);
     // ## or done in one of the following 2 ways
-    // const user: UserState = useContext(UserStore);
-    const user = useContext<UserState>(UserStore);
+    // const user: UserContextObject = useContext(UserContext);
+    const userCtx = useContext<UserContextObject>(UserContext);
+
+    const handleOnClick = () => {
+        userCtx.updateUser("Heidi", "Thormahlen");
+    };
 
     return (
         <>
-            <div>First: {user.first}</div>
-            <div>last: {user.last}</div>
+            <div>First: {userCtx.user.first}</div>
+            <div>Last: {userCtx.user.last}</div>
+            <button onClick={handleOnClick}>Change User</button>
         </>
     );
 };
