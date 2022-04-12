@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 
-import { UserContext, UserContextObject } from "../store/UserStore";
+import { UserContext } from "../store/UserStore";
+import { UserContextObject } from "../models/user";
 
 const ConsumerComponent: React.FC = () => {
     // ## Typing the context can be inferred
