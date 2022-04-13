@@ -1,12 +1,11 @@
 import UserContextProvider from "../store/user";
 
+import ConsumerComponent from "./ContextConsumerComponent";
+
 const UseContextComponent = () => {
     return (
         <UserContextProvider>
-            <div>
-                The Chiled Component that will be needing the User Context will
-                go here
-            </div>
+            <ConsumerComponent />
         </UserContextProvider>
     );
 };
