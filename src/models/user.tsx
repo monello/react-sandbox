@@ -5,7 +5,7 @@ export default interface UserObj {
 }
 
 // Describe the structure of the User Context object. It's data and methods
-export interface UserContextObject {
+export interface UserContextObj {
     user: UserObj;
     updateUser: (first: string, last: string) => void;
 }
