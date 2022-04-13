@@ -16,6 +16,8 @@ const ConsumerComponent: React.FC = () => {
 
     return (
         <>
+            <h3>The Context Consumer (Child) Component</h3>
+            <p>I use the User Context Object</p>
             <div>First: {userCtx.user.first}</div>
             <div>Last: {userCtx.user.last}</div>
             <button onClick={handleOnClick}>Change User</button>

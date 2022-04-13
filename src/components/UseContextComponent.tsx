@@ -1,11 +1,11 @@
 import UserContextProvider from "../store/user";
 
-import ConsumerComponent from "./ContextConsumerComponent";
+import ContextParentComponent from "./ContextParentComponent";
 
 const UseContextComponent = () => {
     return (
         <UserContextProvider>
-            <ConsumerComponent />
+            <ContextParentComponent />
         </UserContextProvider>
     );
 };
