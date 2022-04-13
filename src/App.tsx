@@ -1,10 +1,14 @@
 import UseStateComponent from "./components/UseStateComponent";
 import UseEffectComponent from "./components/UseEffectComponent";
 import UseContextComponent from "./components/UseContextComponent";
+import UseRefComponent from "./components/UseRefComponent";
 
 function App() {
     return (
         <div>
+            <h1>useReference</h1>
+            <UseRefComponent />
+
             <h1>useState</h1>
             <UseStateComponent />
 
