@@ -4,7 +4,8 @@
     "description": "Made a clean start for basic TS course \"Using TypeScript with React\"",
     "main": "index.js",
     "scripts": {
-        "build": "tsc"
+        "build": "tsc",
+        "develop": "yarn concurrently -k -n TSC,NODEMON -c yellow,green \"tsc -w\" \"yarn nodemon -q -w dist dist/index.js\""
     },
     "repository": {
         "type": "git",
@@ -18,6 +19,7 @@
     },
     "homepage": "https://github.com/monello/react-sandbox#readme",
     "devDependencies": {
+        "concurrently": "^7.1.0",
         "nodemon": "^2.0.15",
         "typescript": "^4.6.3"
     }
