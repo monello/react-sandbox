@@ -20,7 +20,40 @@ const interfaceBasics = () => {
     console.log('profileA:', profileA);
     console.log('profileB:', profileB);
 };
+const keyIndexes = () => {
+    // String keys, string values
+    const stringExample = {
+        'foo-key': 'foo-value',
+        // 'bar-key': 1,            // ❌: the value is a number
+        0: 'bar-value' // ✔: Also fine even through the key "0" is a number, because it can be converted to a string
+    };
+    stringExample[1] = 'foobar';
+    stringExample.test = 'test';
+    // stringExample[2] = 1;        // ❌: the value is a number
+    console.log('stringExample', stringExample);
+    // Number keys, string values
+    // Use the when you know FOR SURE all the keys MUST be numbers
+    const numbersExample = {
+        0: 'zero',
+        // 'One': 'One',            // ❌: key cannot be a string
+        '1': 'One', // ✔: because the key can be converted to a number
+        // 2: 2                     // ❌: because the value cannot be a number
+    };
+    numbersExample[3] = 'Three'; // ✔: key is a string
+    // numbersExample['nope'] = 'Blah'  // ❌: because the key cannot be a string
+    numbersExample['4'] = 'Four'; // ✔: because the key can be converted to a number;
+    console.log('numbersExample', numbersExample);
+    // Union Typed example
+    const unionTypeExample = {
+        'a': 'a',
+        'b': 2,
+        'c': true,
+        0: 'foobar'
+    };
+    console.log('unionTypeExample:', unionTypeExample);
+};
 const go = () => {
     interfaceBasics();
+    keyIndexes();
 };
 exports.default = go;
