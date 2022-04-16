@@ -116,10 +116,39 @@ const functionInterface = () => {
 
 };
 
+// Extending Interfaces
+
+interface Parent1 {
+    'a': string;
+}
+interface Parent2 {
+    'b': string;
+}
+interface Parent3 {
+    'c': string;
+}
+
+interface Child extends Parent1, Parent2, Parent3 {
+    'd': 'D';
+}
+
+const child: Child = {
+    'a': 'A',      // ✔: specifying 'a' is required due to extending (inheriting from) Parent 1
+    'b': 'B',      // ✔: specifying 'b' is required due to extending (inheriting from) Parent 2
+    'c': 'C',      // ✔: specifying 'c' is required due to extending (inheriting from) Parent 3
+    'd': 'D',      // ✔: specifying 'd' is required because it is part of the Child interface
+    // 'e': 'E'    // ❌: because 'e` id not in Child or any of the Parent interfaces is extends
+};
+
+const extendingIntefaces = () => {
+    console.log('child:', child);
+};
+
 const go = () => {
     interfaceBasics();
     keyIndexes();
     functionInterface();
+    extendingIntefaces();
 };
 
 export default go;

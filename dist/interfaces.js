@@ -56,9 +56,20 @@ const sum = (value1, value2) => value1 + value2;
 const functionInterface = () => {
     console.log(`4 + 4 = ${sum(4, 4)}`);
 };
+const child = {
+    'a': 'A',
+    'b': 'B',
+    'c': 'C',
+    'd': 'D', // ✔: specifying 'd' is required because it is part of the Child interface
+    // 'e': 'E'    // ❌: because 'e` id not in Child or any of the Parent interfaces is extends
+};
+const extendingIntefaces = () => {
+    console.log('child:', child);
+};
 const go = () => {
     interfaceBasics();
     keyIndexes();
     functionInterface();
+    extendingIntefaces();
 };
 exports.default = go;
