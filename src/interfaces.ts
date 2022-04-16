@@ -101,11 +101,25 @@ const keyIndexes = () => {
     console.log('unionTypeExample:', unionTypeExample);
 };
 
+// Interfaces to describe functions
+interface Sum {
+    // Here we are giving the shape of a functon
+    // - We expect 2 arguments abd both must be of type number
+    // - We expect the function to return a number
+    (a: number, b: number): number;
+}
 
+const sum: Sum = (value1: number, value2: number) => value1 + value2;
+
+const functionInterface = () => {
+    console.log(`4 + 4 = ${sum(4, 4)}`);
+
+};
 
 const go = () => {
     interfaceBasics();
     keyIndexes();
+    functionInterface();
 };
 
 export default go;

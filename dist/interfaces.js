@@ -52,8 +52,13 @@ const keyIndexes = () => {
     };
     console.log('unionTypeExample:', unionTypeExample);
 };
+const sum = (value1, value2) => value1 + value2;
+const functionInterface = () => {
+    console.log(`4 + 4 = ${sum(4, 4)}`);
+};
 const go = () => {
     interfaceBasics();
     keyIndexes();
+    functionInterface();
 };
 exports.default = go;
