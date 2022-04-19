@@ -9,7 +9,7 @@ module.exports = {
         // Each rule tells Webpack how to handle ceratin files
         rules: [{
             test: /.tsx?$/, // A Regex that tests for filenames that end with either ".ts" or ".tsx"
-            loader: 'ts-loader' // Tell Webpack to ignore (exclude from processing) the node_modules directory
+            loader: 'babel-loader' // Tell Webpack to ignore (exclude from processing) the node_modules directory
         }]
     },
     plugins: [
