@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "target": "ES6", // Tells TypeScript Compiler (TSC) to compile the TS file to the ES6 version of ECMAScript (JavaScript)
+        "module": "ES6", // Make use of the ES6 modules system (import/export syntax system) in the compiler's output (JS) files. Webpack will takeover from there and compile the app with using these output files
+        "strict": true // This enables all the TS Config "strict settings. So this saves some set-up so you don't have to set all those up manually here - a leaner config file. Note this is the strictest setting for TS Type setting. https://www.typescriptlang.org/tsconfig#strict
+    }
+}
