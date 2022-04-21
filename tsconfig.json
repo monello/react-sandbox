@@ -1,7 +1,22 @@
 {
     "compilerOptions": {
-        "target": "ES6", // Tells TypeScript Compiler (TSC) to compile the TS file to the ES6 version of ECMAScript (JavaScript)
-        "module": "ES6", // Make use of the ES6 modules system (import/export syntax system) in the compiler's output (JS) files. Webpack will takeover from there and compile the app with using these output files
-        "strict": true // This enables all the TS Config "strict settings. So this saves some set-up so you don't have to set all those up manually here - a leaner config file. Note this is the strictest setting for TS Type setting. https://www.typescriptlang.org/tsconfig#strict
-    }
+        "target": "esnext", // Tells TypeScript Compiler (TSC) to compile the TS file to the ES6 version of ECMAScript (JavaScript) [^1]. EsNext targets the latest verson of Ecma Script.
+        "module": "ES6", // Make use of the ES6 modules system (import/export syntax system) in the compiler's output (JS) files. Webpack will takeover from there and compile the app with using these output files. [^2]
+        "strict": true, // This enables all the TS Config "strict settings. So this saves some set-up so you don't have to set all those up manually here - a leaner config file. Note this is the strictest setting for TS Type setting. [^3]
+        "noEmit": true, // We don't want TSC to output any files when we are using Babel, Babel will do that, but Babel doesn't do Type-checking so we still want TSC to fo that for us
+        "isolatedModules": true, // We need to align TSC with the same settings as Babel. Babel compiles files on-by-one in isolation, It doesn't check if types exisit in other files. This option mimicks that in TSC.
+        "esModuleInterop": true, // This options allows us to import non-ECMAScript modules like CommonJS as if they have a default export thus aligning TSC with the Babel behaviour (not checking if import/exports are valid) [^1]
+        "skipLibCheck": true // Tells TSC not to Type Check External libraries, as we can assume that there were already properly type checked
+    },
+    "include": ["./src/**/*"] // Tells TSC which files to compile. **/* means all folders and all files in these folder (an sub-folders). Remember we are using Babel in this project, but Babel doesn't tdo type-checking so we need TSC to do that
 }
+
+/*
+[^1]: https://github.com/microsoft/TypeScript-New-Handbook/blob/master/reference/Compiler%20Options.md#target
+[^2]: https://github.com/microsoft/TypeScript-New-Handbook/blob/master/reference/Compiler%20Options.md#module
+[^3]: https://github.com/microsoft/TypeScript-New-Handbook/blob/master/reference/Compiler%20Options.md#strict---strict
+
+
+[^1]: Without "esModulesInterOp" we need to import (as an example React) like this: `import * as React from 'react'` With this option enabled we can import like this: `import React from React`. React doesn't have a default export
+
+*/
