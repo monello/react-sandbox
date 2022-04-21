@@ -12,6 +12,7 @@ module.exports = {
             loader: 'babel-loader' // Tell Webpack to ignore (exclude from processing) the node_modules directory
         }]
     },
+    devtool: 'eval-source-map',
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html',    // The path to the HTML file that Webpack must use a s a template to generate the final entry HTML file
