@@ -8,7 +8,9 @@
         "esModuleInterop": true, // This options allows us to import non-ECMAScript modules like CommonJS as if they have a default export thus aligning TSC with the Babel behaviour (not checking if import/exports are valid) [^1]
         "skipLibCheck": true, // Tells TSC not to Type Check External libraries, as we can assume that there were already properly type checked
         "jsx": "react", // "preseve" tells TSC to keep JSX as-is. "react" tells it to convert is to React.createElement(). It this project we use Babel to do the final compiling, so either preserve or react would do here because TSC is set to not emit files
-        "sourceMap": true // This tells TSC to include Sourcemaps in the compiled code. So TSC will compile the source-maps and pass it along to Webpack
+        "sourceMap": true, // This tells TSC to include Sourcemaps in the compiled code. So TSC will compile the source-maps and pass it along to Webpack
+        "resolveJsonModule": true, // This is 1 of 2 steps to get TS to read JSON files (like src/data/pizzas.json). We also need to set "moduleResolution" to "Node"
+        "moduleResolution": "Node" // This is 1 of 2 steps to get TS to read JSON files, it works with the "ResolveJsonModules" setting
     },
     "include": ["./src/**/*"] // Tells TSC which files to compile. **/* means all folders and all files in these folder (an sub-folders). Remember we are using Babel in this project, but Babel doesn't tdo type-checking so we need TSC to do that
 }
