@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.ts',  // Tell webpack where to fine the entry file (The file is starts building it's import-tree from), by default is looks in the 'src' dir for an index.js file, but we are now switching to TS
+    entry: './src/index.tsx',  // Tell webpack where to fine the entry file (The file is starts building it's import-tree from), by default is looks in the 'src' dir for an index.js file, but we are now switching to TS
     resolve: {  // by default webpack doesn't process files with a '.ts' extension, so we need to tell it to do so
         extensions: ['.js', '.ts', '.tsx']
     },
