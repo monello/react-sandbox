@@ -2,7 +2,7 @@ import React from "react";
 
 // 1. Describe a Pizza object
 interface Pizza {
-    id: string;
+    id: number;
     name: string;
     description: string;
     price: number;
