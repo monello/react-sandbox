@@ -10,7 +10,7 @@ import styles from "./App.modules.css";
 
 const App = () => {
     return (
-        <div>
+        <div className={styles.container}>
             <ul>
                 {pizzas.map((pizza) => (
                     <Pizza key={pizza.id} pizza={pizza} />
