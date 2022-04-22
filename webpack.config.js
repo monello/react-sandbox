@@ -7,10 +7,16 @@ module.exports = {
     },
     module: {
         // Each rule tells Webpack how to handle ceratin files
-        rules: [{
-            test: /.tsx?$/, // A Regex that tests for filenames that end with either ".ts" or ".tsx"
-            loader: 'babel-loader' // Tell Webpack to ignore (exclude from processing) the node_modules directory
-        }]
+        rules: [
+            {
+                test: /.tsx?$/, // A Regex that tests for filenames that end with either ".ts" or ".tsx"
+                loader: 'babel-loader' // Tell Webpack to ignore (exclude from processing) the node_modules directory
+            },
+            {
+                test: /.css$/,
+                loader: 'css-loader'
+            }
+        ],
     },
     devtool: 'eval-source-map',
     plugins: [
