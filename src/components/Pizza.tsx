@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./Pizza.modules.css";
+
 // 1. Describe a Pizza object
 interface Pizza {
     id: number;
@@ -17,7 +19,7 @@ interface Props {
 // 4 . Destructure the props-object as "pizza"
 const Pizza: React.FC<Props> = ({ pizza }) => {
     return (
-        <li>
+        <li className={styles.container}>
             <h2>{pizza.name}</h2>
             <p>{pizza.description}</p>
             <p>{pizza.price}</p>
