@@ -17,7 +17,7 @@ module.exports = {
                 test: /.css$/,
                 use: [  // the "loader" property is used to use a single loader, here we want to use multiple loader so we change it to a "use" array.
                     MiniCssExtractPlugin.loader,
-                    { loader: 'css-loader' }
+                    { loader: 'css-loader', options: { modules: true } }
                 ]
             }
         ],

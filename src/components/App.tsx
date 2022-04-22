@@ -6,13 +6,17 @@ import Pizza from "./Pizza";
 //  build an object of it with the data in it
 import pizzas from "../data/pizzas.json";
 
+import styles from "./App.modules.css";
+
 const App = () => {
     return (
-        <ul>
-            {pizzas.map((pizza) => (
-                <Pizza key={pizza.id} pizza={pizza} />
-            ))}
-        </ul>
+        <div>
+            <ul>
+                {pizzas.map((pizza) => (
+                    <Pizza key={pizza.id} pizza={pizza} />
+                ))}
+            </ul>
+        </div>
     );
 };
 
