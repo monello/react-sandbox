@@ -33,7 +33,12 @@ class Cart extends React.Component<Props, State> {
                     <FiShoppingCart />
                     <span>2 pizzas</span>
                 </button>
-                <div className={styles.cartDropDown}>
+                <div
+                    className={styles.cartDropDown}
+                    style={{
+                        display: this.state.isOpen ? "true" : "false",
+                    }}
+                >
                     <ul>
                         <li>Napoletana</li>
                         <li>Matinanara</li>
