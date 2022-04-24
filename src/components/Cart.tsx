@@ -1,5 +1,5 @@
 import React from "react";
-
+import { FiShoppingCart } from "react-icons/fi";
 import styles from "./Cart.modules.css";
 
 interface Props {}
@@ -30,7 +30,8 @@ class Cart extends React.Component<Props, State> {
         return (
             <div className={styles.cartContainer}>
                 <button className={styles.button} type="button">
-                    2 pizzas
+                    <FiShoppingCart />
+                    <span>2 pizzas</span>
                 </button>
                 <div className={styles.cartDropDown}>
                     <ul>
