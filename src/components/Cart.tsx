@@ -25,18 +25,27 @@ class Cart extends React.Component<Props, State> {
         };
     }
 
+    // On-click handler for the show/hide cart button
+    handleCartDisplayState = () => {
+        return this.setState((prevState) => ({ isOpen: !prevState.isOpen }));
+    };
+
     // This is how you re-rener the component in Class-based components
     render(): React.ReactNode {
         return (
             <div className={styles.cartContainer}>
-                <button className={styles.button} type="button">
+                <button
+                    className={styles.button}
+                    type="button"
+                    onClick={this.handleCartDisplayState}
+                >
                     <FiShoppingCart />
                     <span>2 pizzas</span>
                 </button>
                 <div
                     className={styles.cartDropDown}
                     style={{
-                        display: this.state.isOpen ? "true" : "false",
+                        display: this.state.isOpen ? "block" : "none",
                     }}
                 >
                     <ul>
