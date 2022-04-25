@@ -27,7 +27,7 @@ class Cart extends React.Component<Props, State> {
 
     // On-click handler for the show/hide cart button
     handleCartDisplayState = () => {
-        return this.setState((prevState) => ({ isOpen: !prevState.isOpen }));
+        this.setState((prevState) => ({ isOpen: !prevState.isOpen }));
     };
 
     // This is how you re-rener the component in Class-based components
