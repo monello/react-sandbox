@@ -29,6 +29,8 @@ class Cart extends React.Component<Props, State> {
     handleCartDisplayState = (
         e: React.MouseEvent<HTMLButtonElement, MouseEvent>
     ) => {
+        console.log(e.target); // This will give the actual element that was clicked on. This button contains an svg icon and a span. So target will give one of those
+        console.log(e.currentTarget); // This will always give the button (so the element that this event is attached to)
         this.setState((prevState) => ({ isOpen: !prevState.isOpen }));
     };
 
