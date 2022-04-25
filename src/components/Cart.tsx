@@ -26,7 +26,9 @@ class Cart extends React.Component<Props, State> {
     }
 
     // On-click handler for the show/hide cart button
-    handleCartDisplayState = () => {
+    handleCartDisplayState = (
+        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    ) => {
         this.setState((prevState) => ({ isOpen: !prevState.isOpen }));
     };
 
