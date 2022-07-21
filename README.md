@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ```bash
-yarn create create-app react-sandbox --template typescript
+yarn create react-app react-sandbox --template typescript
 ```
 
 ## Available Scripts
